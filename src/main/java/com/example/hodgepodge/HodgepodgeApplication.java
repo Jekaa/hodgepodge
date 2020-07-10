@@ -15,7 +15,7 @@ public class HodgepodgeApplication implements ApplicationRunner {
     }
 
     @Override
-    public void run(ApplicationArguments args) throws Exception {
+    public void run(ApplicationArguments args) {
         log.info("# NonOptionArgs: " + args.getNonOptionArgs().size());
         log.info("NonOptionArgs:");
         args.getNonOptionArgs().forEach(log::info);
