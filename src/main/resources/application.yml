@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: hodgepodge
+server:
+  port: 8081
+management:
+  server:
+    port: 8082
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    info:
+      enabled: true
+    health:
+      enabled: true
+    env:
+      enabled: true
+    loggers:
+      enabled: true
+    metrics:
+      enabled: true
+    scheduledtasks:
+      enabled: true
