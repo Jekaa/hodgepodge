@@ -16,7 +16,6 @@
 
     <properties>
         <start-class>com.example.hodgepodge.HodgepodgeApplication</start-class>
-        <java.version>14</java.version>
         <spring-boot-starter.version>2.3.1.RELEASE</spring-boot-starter.version>
         <spring-boot-test.version>2.3.1.RELEASE</spring-boot-test.version>
         <spring-boot-autoconfigure.version>2.3.1.RELEASE</spring-boot-autoconfigure.version>
