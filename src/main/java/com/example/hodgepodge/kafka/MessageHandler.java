@@ -18,6 +18,5 @@ class MessageHandler {
     void handle(MessageHeaders headers, KafkaMessage message) {
         out.send(headers, message);
     }
-
 }
 

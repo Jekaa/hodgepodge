@@ -48,10 +48,9 @@ public class MessageFlow {
                         .recoveryCallback(new ErrorMessageSendingRecoverer(errorChannel,
                                 new RawRecordHeaderErrorMessageStrategy())))
                 .wireTap(sf -> sf.handle(msg -> log.info("Request(s) received:{}", msg)))
-                .filter(KafkaMessage.class, this::validateRequest,
-                        f -> f.discardFlow(sf -> sf.handle(msg -> {
-                            log.debug("Invalid dto, ignoring: {}", msg);
-                        })))
+                .filter(KafkaMessage.class,
+                        this::validateRequest,
+                        f -> f.discardFlow(sf -> sf.handle(msg -> log.debug("Invalid dto, ignoring: {}", msg))))
                 .handle(msg -> handler.handle(msg.getHeaders(), (KafkaMessage) msg.getPayload()))
                 .get();
     }

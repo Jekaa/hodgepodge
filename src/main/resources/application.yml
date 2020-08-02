@@ -6,7 +6,7 @@ spring:
   application:
     name: hodgepodge
 kafka:
-  bootstrapServer: localhost:8092
+  bootstrapServer: localhost:9092
   kafkaAutocommitIntervalMs: 500
   kafkaMaxPollRecords: 10
   inTopic: inTopic

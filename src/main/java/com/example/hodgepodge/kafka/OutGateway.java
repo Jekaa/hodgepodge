@@ -11,10 +11,6 @@ public interface OutGateway {
 
     String CHANNEL = "OutChannel";
 
-    /**
-     * Отправка результата обработки
-     * @see MessageFlow#outFlow
-     */
     @Gateway(requestChannel = CHANNEL)
     void sendResponse(@Headers MessageHeaders headers, KafkaMessage message);
 }

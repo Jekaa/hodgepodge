@@ -97,7 +97,7 @@ public class KafkaConfig {
                         .put(ProducerConfig.LINGER_MS_CONFIG, kafkaProperties.getKafkaProducerLingerMs())
                         .put(ProducerConfig.MAX_BLOCK_MS_CONFIG, kafkaProperties.getKafkaProducerMaxBlockMs()).build());
         return Kafka.outboundChannelAdapter(producerFactory)
-                .<KafkaMessage>messageKey(m -> m.getPayload().getId())
+                .<KafkaMessage>messageKey(m -> String.valueOf(m.getPayload().getId()))
                 .headerMapper(mapper())
                 .<KafkaMessage>topic(m -> kafkaProperties.getOutTopic())
                 .configureKafkaTemplate(t -> t.id(RESPONSE_KAFKA_HANDLER));
