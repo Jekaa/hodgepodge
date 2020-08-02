@@ -5,6 +5,16 @@ app:
 spring:
   application:
     name: hodgepodge
+kafka:
+  bootstrapServer: localhost:8092
+  kafkaAutocommitIntervalMs: 500
+  kafkaMaxPollRecords: 10
+  inTopic: inTopic
+  outTopic: outTopic
+  kafkaProducerMaxBlockMs: 3000
+  kafkaConsumerSessionTimeoutSec: 10
+  groupId: default-group
+  kafkaListenerConcurrency: 1
 server:
   port: 8081
 management:
