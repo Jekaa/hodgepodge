@@ -14,15 +14,20 @@
     <name>hodgepodge</name>
     <description>hodgepodge project</description>
 
+    <scm>
+        <connection>scm:git:git@github.com:Jekaa/hodgepodge.git</connection>
+        <developerConnection>scm:git:git@github.com:Jekaa/hodgepodge.git</developerConnection>
+    </scm>
+
     <properties>
         <start-class>com.example.hodgepodge.HodgepodgeApplication</start-class>
+        <project.scm.id>git</project.scm.id>
         <spring-boot-starter.version>2.3.1.RELEASE</spring-boot-starter.version>
         <spring-boot-test.version>2.3.1.RELEASE</spring-boot-test.version>
         <spring-boot-autoconfigure.version>2.3.1.RELEASE</spring-boot-autoconfigure.version>
         <spring-test.version>5.2.7.RELEASE</spring-test.version>
         <lombok.version>1.18.12</lombok.version>
         <spring-boot-starter-actuator.version>2.3.2.RELEASE</spring-boot-starter-actuator.version>
-        <javaee-api.version>8.0</javaee-api.version>
         <spring-kafka.version>2.5.3.RELEASE</spring-kafka.version>
         <spring-integration-kafka>3.3.0.RELEASE</spring-integration-kafka>
         <guava.version>28.1-jre</guava.version>
@@ -84,11 +89,6 @@
             <type>pom</type>
         </dependency>
         <dependency>
-            <groupId>javax</groupId>
-            <artifactId>javaee-api</artifactId>
-            <version>${javaee-api.version}</version>
-        </dependency>
-        <dependency>
             <groupId>org.springframework.kafka</groupId>
             <artifactId>spring-kafka</artifactId>
             <version>${spring-kafka.version}</version>
@@ -130,6 +130,11 @@
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
             </plugin>
         </plugins>
     </build>

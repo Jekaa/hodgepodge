@@ -14,8 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.integration.channel.DefaultHeaderChannelRegistry;
+import org.springframework.integration.channel.DirectChannel;
 import org.springframework.integration.kafka.dsl.Kafka;
 import org.springframework.integration.kafka.dsl.KafkaProducerMessageHandlerSpec;
+import org.springframework.integration.support.channel.HeaderChannelRegistry;
 import org.springframework.kafka.annotation.EnableKafka;
 import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.config.KafkaListenerContainerFactory;
@@ -26,6 +29,7 @@ import org.springframework.kafka.core.ProducerFactory;
 import org.springframework.kafka.support.DefaultKafkaHeaderMapper;
 import org.springframework.kafka.support.converter.BatchMessagingMessageConverter;
 import org.springframework.kafka.support.converter.StringJsonMessageConverter;
+import org.springframework.messaging.MessageChannel;
 
 import java.util.Map;
 
@@ -102,5 +106,15 @@ public class KafkaConfig {
     @Bean
     public DefaultKafkaHeaderMapper mapper() {
         return new DefaultKafkaHeaderMapper();
+    }
+
+    @Bean
+    public MessageChannel errorChannel() {
+        return new DirectChannel();
+    }
+
+    @Bean
+    public HeaderChannelRegistry integrationHeaderChannelRegistry() {
+        return new DefaultHeaderChannelRegistry();
     }
 }
