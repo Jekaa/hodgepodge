@@ -1,7 +1,3 @@
-app:
-  scheduler:
-    timeNowScheduler:
-      fixedRate: 5000
 spring:
   application:
     name: hodgepodge
