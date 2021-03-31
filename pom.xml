@@ -30,7 +30,7 @@
         <spring-boot-starter-actuator.version>2.3.2.RELEASE</spring-boot-starter-actuator.version>
         <spring-kafka.version>2.5.3.RELEASE</spring-kafka.version>
         <spring-integration-kafka>3.3.0.RELEASE</spring-integration-kafka>
-        <guava.version>28.1-jre</guava.version>
+        <guava.version>29.0-jre</guava.version>
         <vavr.version>0.10.2</vavr.version>
         <vavr-jackson.version>0.10.2</vavr-jackson.version>
         <jackson-datatype-jsr310.varsion>2.11.0</jackson-datatype-jsr310.varsion>
