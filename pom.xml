@@ -22,7 +22,7 @@
     <properties>
         <start-class>com.example.hodgepodge.HodgepodgeApplication</start-class>
         <project.scm.id>git</project.scm.id>
-        <spring-boot-starter.version>2.3.1.RELEASE</spring-boot-starter.version>
+        <spring-boot-starter.version>2.5.12</spring-boot-starter.version>
         <spring-boot-test.version>2.3.1.RELEASE</spring-boot-test.version>
         <spring-boot-autoconfigure.version>2.3.1.RELEASE</spring-boot-autoconfigure.version>
         <spring-test.version>5.2.7.RELEASE</spring-test.version>
